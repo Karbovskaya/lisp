@@ -56,10 +56,12 @@
 ; 28. Определите функцию, вычисляющую, сколько всего атомов в списке (списочной структуре).
 
 (defun atomCnt (l)
+((lambda (последний)
   (cond ((null l) 0)
-    ((atom (car l)) (+ 1 (atomCnt (cdr l))))
-    (t (atomCnt (cdr l)))))
+    ((atom (car l)) (+ 1 (atomCnt последний)))
+    (t (atomCnt последний))))
+    (cdr l)); последний = (cdr l)
+    )
 	
-(print(atomCnt '(2 91 3)))
+(print(atomCnt '(2 91 3 5)))
 (print(atomCnt '(2 (4) 1 1)))
-
