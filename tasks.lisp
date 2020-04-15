@@ -6,10 +6,13 @@
 
 
 (defun del-last (lst)
+((lambda (первый)
 	(cond
-		((null (cddr lst)) (list(car lst)))
-		(t (cons (car lst) (del-last (cdr lst))))
+		((null (cddr lst)) (list первый))
+		(t (cons первый (del-last (cdr lst))))
 	)
+)
+(car lst)); первый = (car lst)
 )
 
 (defun del-n-last (lst n)
@@ -17,11 +20,11 @@
 		((= n 0) lst)
 		(t (del-n-last (del-last lst) (- n 1)))
 	)
+	 
 )
 
 
-(print(del-n-last '(1 2 9 5 8 4) 3)
-      
+(print(del-n-last '(1 2 9 5 8 4) 3))
 
 ;48. Функция GET возвращает в качестве результата NIL в том случае, если у символа нет данного свойства, либо если значением этого свойства является NIL.
 ;Следовательно, функцией GET нельзя проверить, есть ли некоторое свойство в
