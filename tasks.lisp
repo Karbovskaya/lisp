@@ -2,6 +2,26 @@
 ; задачи 10 4 5 16 21 28 31 35 41 45 48
 
 
+;10. Определите функцию, осуществляющую удаление указанного количества последних элементов исходного списка.
+
+
+(defun del-last (lst)
+	(cond
+		((null (cddr lst)) (list(car lst)))
+		(t (cons (car lst) (del-last (cdr lst))))
+	)
+)
+
+(defun del-n-last (lst n)
+	(cond
+		((= n 0) lst)
+		(t (del-n-last (del-last lst) (- n 1)))
+	)
+)
+
+
+(print(del-n-last '(1 2 9 5 8 4) 3)
+      
 
 ;48. Функция GET возвращает в качестве результата NIL в том случае, если у символа нет данного свойства, либо если значением этого свойства является NIL.
 ;Следовательно, функцией GET нельзя проверить, есть ли некоторое свойство в
@@ -16,9 +36,9 @@
 (setf (get 'books 'two-author) '(nil))
 
 
-(print (property 'movie 'director))
-(print (property 'movie 'title))
-(print (property 'movie 'year))
+(print(property 'movie 'director))
+(print(property 'movie 'title))
+(print(property 'movie 'year))
 
 ;35 Определите функцию ПОДМНОЖЕСТВО, которая проверяет, является ли одно множество подмножеством другого. Определите также СОБСТ
 
@@ -37,9 +57,9 @@
         (t (subset (x y)))
     )
 )
-(print (subset '(1 3) '(f 1 t 3 5 2)))
-(print (subset '(d 6) '(f 5 2 d i x)))
-(print (own-subset '(4 3) '(4 3)))
+(print(subset '(1 3) '(f 1 t 3 5 2)))
+(print(subset '(d 6) '(f 5 2 d i x)))
+(print(own-subset '(4 3) '(4 3)))
 
 ________________________________________________________________________________________________________________________________________
 
