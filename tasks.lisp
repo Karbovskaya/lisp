@@ -1,5 +1,5 @@
 ; Вариант 10
-; задачи 10 4 5 16 21 28 31 35 41 45 48
+; задачи 10 4 +5 16 +21 +28 31 35 41 +45 48
 
 
 ;10. Определите функцию, осуществляющую удаление указанного количества последних элементов исходного списка.
@@ -42,27 +42,43 @@
 (print(property 'movie 'director))
 (print(property 'movie 'title))
 (print(property 'movie 'year))
+(print(property 'movie 'two-author))
 
 ;35 Определите функцию ПОДМНОЖЕСТВО, которая проверяет, является ли одно множество подмножеством другого. Определите также СОБСТ
 
-(defun subset (x y)
-    (cond 
-        ((null x) t)
-        ((member (car x) y) (subset (cdr x) y))
-    )
+(defun my-member(el lst)
+	(cond
+		((null lst) nil)
+		((eq (car lst) el) t)
+		(t (my-member el (cdr lst)))
+	)
 )
 
-
-(defun own-subset (x y)
-    (cond 
-        ((null x) nil)
-        ((equalp x y) nil)
-        (t (subset (x y)))
-    )
+(defun subset(set1 set2)
+	(cond
+		((null set1) t)
+		((my-member (car set1) set2) (subset (cdr set1) set2))
+		(t nil)
+	)
 )
-(print(subset '(1 3) '(f 1 t 3 5 2)))
-(print(subset '(d 6) '(f 5 2 d i x)))
-(print(own-subset '(4 3) '(4 3)))
+
+(defun proper-subset(set1 set2)
+	(cond
+		((null set1) nil)
+		((subset set1 set2) 
+			(cond
+				((subset set2 set1) nil)
+				(t t)
+			)
+		)
+		(t nil)
+	)
+)
+
+(print(subset '(1 2 3) '(1 2 3 4 5 6)))
+(print(subset '(1 2 ) '(2 3 4 5)))
+(print(proper-subset '() '(1 2 3 4 5)))
+(print(proper-subset '(1 2 3) '(1 2 3 4 5 6)))
 
 ________________________________________________________________________________________________________________________________________
 
