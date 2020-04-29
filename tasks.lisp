@@ -66,17 +66,17 @@
 )
 
 (defun proper-subset(set1 set2)
-	(cond
-		((null set1) nil)
-		((subset set1 set2) 
-			(cond
-				((subset set2 set1) nil)
-				(t t)
-			)
-		)
-		(t nil)
-	)
+    (cond
+        ((null set1) nil)
+        ((and (subset set1 set2) (subset set2 set1)) t)
+        (t nil)
+    )
 )
+
+(print(subset '(1 2 3) '(1 2 3 4 5 6)))
+;(print(subset '(1 2 ) '(2 3 4 5)))
+;(print(proper-subset '() '(1 2 3 4 5)))
+;(print(proper-subset '(1 2 3) '(1 2 3 4 5 6)))
 
 (print(subset '(1 2 3) '(1 2 3 4 5 6)))
 (print(subset '(1 2 ) '(2 3 4 5)))
