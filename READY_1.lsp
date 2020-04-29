@@ -33,19 +33,28 @@
 ;Следовательно, функцией GET нельзя проверить, есть ли некоторое свойство в
 ;списке свойств. Напишите предикат (ИМЕЕТ-СВОЙСТВО символ свойство), который проверяет, обладает ли символ данным свойством.
 
-(defun property (x y)
-    (if (eq (get x y) nil ) nil t)
-    )
+(defun Property(x prop)
+  (FindProp prop (symbol-plist x))
+)
+
+
+(defun FindProp(prop list)
+  (cond
+      ((null list) nil)
+      ((equal prop (car list)) T)
+      (T (FindProp prop (cddr list)))
+  )
+)
 
 (setf (get 'movie 'title) '(Harry Potter))
 (setf (get 'movie 'director) '(Chris Columbus))
 (setf (get 'books 'two-author) '(nil))
 
 
-(print(property 'movie 'director))
-(print(property 'movie 'title))
-(print(property 'movie 'year))
-(print(property 'movie 'two-author))
+(print(Property 'movie 'director))
+(print(Property 'movie 'title))
+(print(Property 'movie 'year))
+(print(Property 'movie 'two-author))
 
 ;35 Определите функцию ПОДМНОЖЕСТВО, которая проверяет, является ли одно множество подмножеством другого. Определите также СОБСТ
 
