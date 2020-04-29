@@ -1,57 +1,23 @@
+;41. Реализовать генератор деревьев, чтобы выдаваемые им деревья имели количество вершин, точно соответствующее числу, указанному в его первом аргументе.
 
-;31.Определите функцию (ПЕРВЫЙ-СОВПАДАЮЩИЙ х у), которая возвращает первый
-;элемент, входящий в оба списка х и у, в противном случае NIL.
+(defun tree1 (n k)
+	
+	(cond ((<= n k) nil)
+		(t
+        ((lambda (first)
+            (list k (tree1 n first) (tree1 n (+ first 1))))
+        (+ (* k 2) 1)))
+	)
 
-
-(defun f(a l)
-      (cond
-         ((null l) nil)
-         ((eq a (car l)) a)
-         (t( f a (cdr l)))
-      )
 )
-
-(defun lis (l1 l2)
- ((lambda (first res)
-      (cond
-         ((null l1) nil)
-         ((eq first (f first l2)) first)
-         (t( lis res l2))
-       )
-         )(car l1)(cdr l1))
+(defun tree(n)
+        (tree1 n 0)
 )
+(print (tree 2))
+(print (tree 3))
+(print (tree 4))
 
 
-(print (lis '(1 2 3) '(4 9 0)))
-(print (lis '(1 2 3) '(5 3 4)))
-
-
-;48. Функция GET возвращает в качестве результата NIL в том случае, если у символа нет данного свойства, либо если значением этого свойства является NIL.
-;Следовательно, функцией GET нельзя проверить, есть ли некоторое свойство в
-;списке свойств. Напишите предикат (ИМЕЕТ-СВОЙСТВО символ свойство), который проверяет, обладает ли символ данным свойством.
-
-(defun Property(x prop)
-  (FindProp prop (symbol-plist x))
-)
-
-
-(defun FindProp(prop list)
-  (cond
-      ((null list) nil)
-      ((equal prop (car list)) T)
-      (T (FindProp prop (cddr list)))
-  )
-)
-
-(setf (get 'movie 'title) '(Harry Potter))
-(setf (get 'movie 'director) '(Chris Columbus))
-(setf (get 'books 'two-author) '(nil))
-
-
-(print(Property 'movie 'director))
-(print(Property 'movie 'title))
-(print(Property 'movie 'year))
-(print(Property 'movie 'two-author))
 
 ;35 Определите функцию ПОДМНОЖЕСТВО, которая проверяет, является ли одно множество подмножеством другого. Определите также СОБСТ
 
