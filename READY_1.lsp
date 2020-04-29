@@ -83,11 +83,6 @@
 )
 
 (print(subset '(1 2 3) '(1 2 3 4 5 6)))
-;(print(subset '(1 2 ) '(2 3 4 5)))
-;(print(proper-subset '() '(1 2 3 4 5)))
-;(print(proper-subset '(1 2 3) '(1 2 3 4 5 6)))
-
-(print(subset '(1 2 3) '(1 2 3 4 5 6)))
 (print(subset '(1 2 ) '(2 3 4 5)))
 (print(proper-subset '() '(1 2 3 4 5)))
 (print(proper-subset '(1 2 3) '(1 2 3 4 5 6)))
