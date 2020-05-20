@@ -1,1 +1,1 @@
-# *Rust* <img src="https://github.com/Karbovskaya/lisp/blob/master/rust-min.png" width="50" >
+<img src="https://github.com/Karbovskaya/lisp/blob/master/rust-min.png" width="80" >
