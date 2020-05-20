@@ -37,6 +37,38 @@ __Недостатки:__
 
 * Очень строгий компилятор кода, иногда чересчур сильно контролирующий обращения к памяти.
 
+## Установка Rust
+
+Первым шагом к использованию Rust является его установка. В этой главе нам понадобится интернет-соединение для выполнения команд, с помощью которых мы загрузим Rust из Интернета.
+
+Мы воспользуемся несколькими командами в терминале, и они все будут начинаться с ```$```. Вам не нужно вводить ```$```: этот символ используется только для того, чтобы обозначить начало каждой команды. В Интернете можно увидеть множество руководств и примеров, которые следуют этому правилу: ```$``` обозначает команды, которые выполняются с правами обычного пользователя, и``` #``` — команды, которые выполняются с правами администратора.
+
+### Установка на Linux или Mac
+
+Если вы используете Linux или Mac, то всё, что вам нужно сделать, — это ввести следующую команду в консоль:
+
+
+```$ curl -sSf https://static.rust-lang.org/rustup.sh | sh```
+Эта команда загрузит скрипт и начнёт установку. Если всё пройдёт успешно, то вы увидите следующий текст:
+
+
+```Welcome to Rust.
+
+This script will download the Rust compiler and its package manager, Cargo, and
+install them to /usr/local. You may install elsewhere by running this script
+with the --prefix=<path> option.
+
+The installer will run under ‘sudo’ and may ask you for your password. If you do
+not want the script to run ‘sudo’ then pass it the --disable-sudo flag.
+
+You may uninstall later by running /usr/local/lib/rustlib/uninstall.sh,
+or by running this script again with the --uninstall flag.
+
+Continue? (y/N)
+```
+
+Нажмите ```y``` для подтверждения и следуйте дальнейшим подсказкам.
+
 ## Первое впечатление
 Синтаксис языка строится в традиционном си-подобном стиле.
 
