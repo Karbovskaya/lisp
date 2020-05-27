@@ -1,7 +1,3 @@
-Официальный сайт https://www.rust-lang.org
-
-Информация для начала https://rurust.github.io/rust_book_ru/getting-started.html
-
 
 <img src="https://github.com/Karbovskaya/lisp/blob/master/rust-min.png" width="150" >
 Rust входит в топ лучших языков функционального программирования. 
@@ -119,3 +115,6 @@ fn main() {
    println!("company icon is:{}",icon_char);
 }
 ```
+Официальный сайт https://www.rust-lang.org
+
+Информация для начала https://rurust.github.io/rust_book_ru/getting-started.html
