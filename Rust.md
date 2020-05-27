@@ -1,6 +1,6 @@
 Официальный сайт https://www.rust-lang.org
 
-Информация https://rurust.github.io/rust_book_ru/getting-started.html
+Информация для начала https://rurust.github.io/rust_book_ru/getting-started.html
 
 
 <img src="https://github.com/Karbovskaya/lisp/blob/master/rust-min.png" width="150" >
