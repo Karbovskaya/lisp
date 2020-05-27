@@ -1,4 +1,5 @@
 Официальный сайт https://www.rust-lang.org
+
 Информация https://rurust.github.io/rust_book_ru/getting-started.html
 
 
