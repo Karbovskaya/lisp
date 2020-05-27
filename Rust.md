@@ -1,3 +1,4 @@
+официальный сайт https://www.rust-lang.org
 <img src="https://github.com/Karbovskaya/lisp/blob/master/rust-min.png" width="150" >
 Rust входит в топ лучших языков функционального программирования. 
 
